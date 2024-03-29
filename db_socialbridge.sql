@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2024 at 05:43 PM
+-- Generation Time: Mar 30, 2024 at 12:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,37 +28,45 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_admin` (
-  `admin_id` int(11) NOT NULL,
-  `admin_name` varchar(100) NOT NULL,
-  `admin_password` varchar(100) NOT NULL,
-  `admin_email` int(11) NOT NULL
+  `admin_id` int(10) UNSIGNED NOT NULL,
+  `admin_name` varchar(50) NOT NULL,
+  `admin_email` varchar(50) NOT NULL,
+  `admin_password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
+(8, 'Admin', 'admin@gmail.com', 'admin@123');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_category`
+-- Table structure for table `tbl_comment`
 --
 
-CREATE TABLE `tbl_category` (
-  `category_id` int(11) NOT NULL,
-  `category_name` varchar(100) NOT NULL
+CREATE TABLE `tbl_comment` (
+  `comment_id` int(10) UNSIGNED NOT NULL,
+  `comment_content` varchar(200) NOT NULL,
+  `comment_date` varchar(50) NOT NULL,
+  `post_id` int(10) UNSIGNED NOT NULL,
+  `sponser_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `sponser_name` varchar(50) NOT NULL DEFAULT '0',
+  `sponser_photo` longtext NOT NULL,
+  `influencer_id` int(11) NOT NULL DEFAULT 0,
+  `influencer_name` varchar(50) NOT NULL DEFAULT '0',
+  `influencer_photo` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `tbl_chat`
+-- Dumping data for table `tbl_comment`
 --
 
-CREATE TABLE `tbl_chat` (
-  `chat_id` int(11) NOT NULL,
-  `chat_content` varchar(300) NOT NULL,
-  `influencer_from_id` int(11) NOT NULL DEFAULT 0,
-  `influencer_to_id` int(11) NOT NULL DEFAULT 0,
-  `sponser_from_id` int(11) NOT NULL DEFAULT 0,
-  `sponser_to_id` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `tbl_comment` (`comment_id`, `comment_content`, `comment_date`, `post_id`, `sponser_id`, `sponser_name`, `sponser_photo`, `influencer_id`, `influencer_name`, `influencer_photo`) VALUES
+(1, '', '', 0, 0, '0', '', 0, '0', ''),
+(2, 'dsdsads', 'March 30 2024, 04:27 AM', 6, 3, 'Sponsor', 'data:image/png;base64,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', 0, '0', '0');
 
 -- --------------------------------------------------------
 
@@ -67,13 +75,14 @@ CREATE TABLE `tbl_chat` (
 --
 
 CREATE TABLE `tbl_complaint` (
-  `complaint_id` int(11) NOT NULL,
-  `complaint_date` varchar(100) NOT NULL,
-  `complaint_details` varchar(100) NOT NULL,
-  `complaint_reply` varchar(100) NOT NULL DEFAULT 'Not Yet Replied',
-  `complaint_status` int(11) NOT NULL DEFAULT 0,
-  `influencer_id` int(11) NOT NULL,
-  `complaint_reply_date` varchar(10) NOT NULL DEFAULT '0'
+  `complaint_id` int(10) UNSIGNED NOT NULL,
+  `complaint_content` varchar(50) NOT NULL,
+  `complaint_date` varchar(50) NOT NULL,
+  `complaint_reply` varchar(50) NOT NULL DEFAULT 'Not Yet Reply',
+  `complaint_reply_date` varchar(50) NOT NULL DEFAULT '0',
+  `complaint_status` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `sponser_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `influencer_id` int(10) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -83,8 +92,31 @@ CREATE TABLE `tbl_complaint` (
 --
 
 CREATE TABLE `tbl_district` (
-  `district_id` int(11) NOT NULL,
-  `district_name` varchar(100) NOT NULL
+  `district_id` int(10) UNSIGNED NOT NULL,
+  `district_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_district`
+--
+
+INSERT INTO `tbl_district` (`district_id`, `district_name`) VALUES
+(18, 'Idukki');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_feedback`
+--
+
+CREATE TABLE `tbl_feedback` (
+  `feedback_id` int(10) UNSIGNED NOT NULL,
+  `feedback_content` varchar(50) NOT NULL,
+  `feedback_date` varchar(50) NOT NULL,
+  `college_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `department_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `sponser_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `influencer_id` int(10) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -94,14 +126,57 @@ CREATE TABLE `tbl_district` (
 --
 
 CREATE TABLE `tbl_influencer` (
-  `influencer_id` int(11) NOT NULL,
-  `influencer_name` varchar(100) NOT NULL,
-  `influencer_email` varchar(100) NOT NULL,
-  `influencer_address` varchar(100) NOT NULL,
-  `influencer_photo` varchar(100) NOT NULL,
-  `influencer_proof` varchar(100) NOT NULL,
-  `influencer_password` varchar(100) NOT NULL,
-  `influencer_status` int(11) NOT NULL DEFAULT 0
+  `influencer_id` int(10) UNSIGNED NOT NULL,
+  `influencer_name` varchar(50) NOT NULL,
+  `influencer_contact` varchar(50) NOT NULL,
+  `influencer_email` varchar(50) NOT NULL,
+  `influencer_address` varchar(50) NOT NULL,
+  `influencer_photo` longtext NOT NULL,
+  `influencer_password` varchar(50) NOT NULL,
+  `place_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_influencer`
+--
+
+INSERT INTO `tbl_influencer` (`influencer_id`, `influencer_name`, `influencer_contact`, `influencer_email`, `influencer_address`, `influencer_photo`, `influencer_password`, `place_id`) VALUES
+(2, 'Influencor', '8765432190', 'in@gmail.com', 'Thodupuzha', 'data:image/png;base64,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', 'Qwerty@123', 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_like`
+--
+
+CREATE TABLE `tbl_like` (
+  `like_id` int(10) UNSIGNED NOT NULL,
+  `post_id` int(10) UNSIGNED NOT NULL,
+  `sponser_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `sponser_name` varchar(50) NOT NULL DEFAULT '0',
+  `sponser_photo` longtext NOT NULL,
+  `influencer_id` int(11) NOT NULL DEFAULT 0,
+  `influencer_name` varchar(50) NOT NULL DEFAULT '0',
+  `influencer_photo` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_like`
+--
+
+INSERT INTO `tbl_like` (`like_id`, `post_id`, `sponser_id`, `sponser_name`, `sponser_photo`, `influencer_id`, `influencer_name`, `influencer_photo`) VALUES
+(3, 6, 3, 'Sponsor', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAABlBJREFUeF7t1AENACAMA0EmY/6FQoKNvznodens7j2OAIGkwBiAZO9CE/gCBsAjEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07gAZE+SxDUlOMQAAAAAElFTkSuQmCC', 0, '0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_phishingurls`
+--
+
+CREATE TABLE `tbl_phishingurls` (
+  `phishing_id` int(10) UNSIGNED NOT NULL,
+  `phishing_url` longtext NOT NULL,
+  `phishing_date` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -112,9 +187,16 @@ CREATE TABLE `tbl_influencer` (
 
 CREATE TABLE `tbl_place` (
   `place_id` int(11) NOT NULL,
-  `place_name` varchar(100) NOT NULL,
-  `district_id` int(11) NOT NULL
+  `district_id` int(10) UNSIGNED NOT NULL,
+  `place_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_place`
+--
+
+INSERT INTO `tbl_place` (`place_id`, `district_id`, `place_name`) VALUES
+(12, 18, 'Thodupuzha');
 
 -- --------------------------------------------------------
 
@@ -123,42 +205,27 @@ CREATE TABLE `tbl_place` (
 --
 
 CREATE TABLE `tbl_post` (
-  `post_id` int(11) NOT NULL,
-  `post_title` varchar(100) NOT NULL,
-  `post_details` varchar(100) NOT NULL,
-  `post_photo` varchar(100) NOT NULL,
-  `subcategory_id` int(11) NOT NULL
+  `post_id` int(10) UNSIGNED NOT NULL,
+  `post_content` varchar(200) NOT NULL,
+  `post_date` varchar(50) NOT NULL,
+  `post_file` longtext DEFAULT NULL,
+  `sponser_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `sponser_name` varchar(50) NOT NULL DEFAULT '0',
+  `sponser_photo` longtext NOT NULL,
+  `influencer_id` int(11) NOT NULL DEFAULT 0,
+  `influencer_name` varchar(50) NOT NULL DEFAULT '0',
+  `influencer_photo` longtext NOT NULL,
+  `privacy_status` int(10) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `tbl_request`
+-- Dumping data for table `tbl_post`
 --
 
-CREATE TABLE `tbl_request` (
-  `request_id` int(11) NOT NULL,
-  `request_date` varchar(100) NOT NULL,
-  `request_details` varchar(100) NOT NULL,
-  `request_status` int(11) NOT NULL DEFAULT 0,
-  `sponser_id` int(11) NOT NULL,
-  `influncer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_review`
---
-
-CREATE TABLE `tbl_review` (
-  `review_id` int(11) NOT NULL,
-  `user_name` varchar(100) NOT NULL,
-  `user_rating` varchar(100) NOT NULL,
-  `user_review` varchar(100) NOT NULL,
-  `review_datetime` varchar(100) NOT NULL,
-  `sponser_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `tbl_post` (`post_id`, `post_content`, `post_date`, `post_file`, `sponser_id`, `sponser_name`, `sponser_photo`, `influencer_id`, `influencer_name`, `influencer_photo`, `privacy_status`) VALUES
+(6, '1', 'March 30 2024, 04:04 AM', '', 3, 'Sponsor', 'data:image/png;base64,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', 0, '0', '0', 1),
+(7, '2', 'March 30 2024, 04:04 AM', '', 3, 'Sponsor', 'data:image/png;base64,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', 0, '0', '0', 2),
+(8, '3', 'March 30 2024, 04:04 AM', '', 3, 'Sponsor', 'data:image/png;base64,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', 0, '0', '0', 3);
 
 -- --------------------------------------------------------
 
@@ -167,28 +234,47 @@ CREATE TABLE `tbl_review` (
 --
 
 CREATE TABLE `tbl_sponser` (
-  `sponser_id` int(11) NOT NULL,
-  `sponser_name` varchar(100) NOT NULL,
-  `sponser_contact` varchar(100) NOT NULL,
-  `sponser_email` varchar(100) NOT NULL,
-  `sponser_address` varchar(100) NOT NULL,
-  `sponser_photo` varchar(100) NOT NULL,
-  `sponser_proof` varchar(100) NOT NULL,
-  `sponser_password` varchar(100) NOT NULL,
-  `sponser_status` int(11) NOT NULL
+  `sponser_id` int(10) UNSIGNED NOT NULL,
+  `sponser_name` varchar(50) NOT NULL,
+  `sponser_contact` varchar(50) NOT NULL,
+  `sponser_email` varchar(50) NOT NULL,
+  `sponser_address` varchar(50) NOT NULL,
+  `sponser_photo` longtext NOT NULL,
+  `sponser_password` varchar(50) NOT NULL,
+  `place_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_sponser`
+--
+
+INSERT INTO `tbl_sponser` (`sponser_id`, `sponser_name`, `sponser_contact`, `sponser_email`, `sponser_address`, `sponser_photo`, `sponser_password`, `place_id`) VALUES
+(3, 'Sponsor', '8765432190', 'sponsor@gmail.com', 'Thodupuzha', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAABlBJREFUeF7t1AENACAMA0EmY/6FQoKNvznodens7j2OAIGkwBiAZO9CE/gCBsAjEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07AAPgBAmEBAxAuX3QCBsAPEAgLGIBw+aITMAB+gEBYwACEyxedgAHwAwTCAgYgXL7oBAyAHyAQFjAA4fJFJ2AA/ACBsIABCJcvOgED4AcIhAUMQLh80QkYAD9AICxgAMLli07gAZE+SxDUlOMQAAAAAElFTkSuQmCC', 'Qwerty@123', 12);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_subcategory`
+-- Table structure for table `tbl_sponser_influencer_chat`
 --
 
-CREATE TABLE `tbl_subcategory` (
-  `subcategory_id` int(11) NOT NULL,
-  `subcategory_name` varchar(100) NOT NULL,
-  `category_id` int(11) NOT NULL
+CREATE TABLE `tbl_sponser_influencer_chat` (
+  `chat_id` int(10) UNSIGNED NOT NULL,
+  `chat_content` varchar(3500) NOT NULL,
+  `from_sponser_id` int(10) UNSIGNED DEFAULT 0,
+  `to_sponser_id` int(10) UNSIGNED DEFAULT 0,
+  `to_influencer_id` int(10) UNSIGNED DEFAULT 0,
+  `from_influencer_id` int(10) UNSIGNED DEFAULT 0,
+  `chat_date` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_sponser_influencer_chat`
+--
+
+INSERT INTO `tbl_sponser_influencer_chat` (`chat_id`, `chat_content`, `from_sponser_id`, `to_sponser_id`, `to_influencer_id`, `from_influencer_id`, `chat_date`) VALUES
+(4, 'This message was Deleted', 3, 0, 2, 0, 'March 30 2024, 03:28 AM'),
+(5, 'Hai', 0, 3, 0, 2, 'March 30 2024, 03:30 AM'),
+(6, 'This message was Deleted', 3, 0, 2, 0, 'March 30 2024, 03:35 AM');
 
 --
 -- Indexes for dumped tables
@@ -201,16 +287,10 @@ ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `tbl_category`
+-- Indexes for table `tbl_comment`
 --
-ALTER TABLE `tbl_category`
-  ADD PRIMARY KEY (`category_id`);
-
---
--- Indexes for table `tbl_chat`
---
-ALTER TABLE `tbl_chat`
-  ADD PRIMARY KEY (`chat_id`);
+ALTER TABLE `tbl_comment`
+  ADD PRIMARY KEY (`comment_id`);
 
 --
 -- Indexes for table `tbl_complaint`
@@ -225,10 +305,28 @@ ALTER TABLE `tbl_district`
   ADD PRIMARY KEY (`district_id`);
 
 --
+-- Indexes for table `tbl_feedback`
+--
+ALTER TABLE `tbl_feedback`
+  ADD PRIMARY KEY (`feedback_id`);
+
+--
 -- Indexes for table `tbl_influencer`
 --
 ALTER TABLE `tbl_influencer`
   ADD PRIMARY KEY (`influencer_id`);
+
+--
+-- Indexes for table `tbl_like`
+--
+ALTER TABLE `tbl_like`
+  ADD PRIMARY KEY (`like_id`);
+
+--
+-- Indexes for table `tbl_phishingurls`
+--
+ALTER TABLE `tbl_phishingurls`
+  ADD PRIMARY KEY (`phishing_id`);
 
 --
 -- Indexes for table `tbl_place`
@@ -243,28 +341,16 @@ ALTER TABLE `tbl_post`
   ADD PRIMARY KEY (`post_id`);
 
 --
--- Indexes for table `tbl_request`
---
-ALTER TABLE `tbl_request`
-  ADD PRIMARY KEY (`request_id`);
-
---
--- Indexes for table `tbl_review`
---
-ALTER TABLE `tbl_review`
-  ADD PRIMARY KEY (`review_id`);
-
---
 -- Indexes for table `tbl_sponser`
 --
 ALTER TABLE `tbl_sponser`
   ADD PRIMARY KEY (`sponser_id`);
 
 --
--- Indexes for table `tbl_subcategory`
+-- Indexes for table `tbl_sponser_influencer_chat`
 --
-ALTER TABLE `tbl_subcategory`
-  ADD PRIMARY KEY (`subcategory_id`);
+ALTER TABLE `tbl_sponser_influencer_chat`
+  ADD PRIMARY KEY (`chat_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -274,73 +360,73 @@ ALTER TABLE `tbl_subcategory`
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tbl_category`
+-- AUTO_INCREMENT for table `tbl_comment`
 --
-ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_chat`
---
-ALTER TABLE `tbl_chat`
-  MODIFY `chat_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tbl_comment`
+  MODIFY `comment_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_complaint`
 --
 ALTER TABLE `tbl_complaint`
-  MODIFY `complaint_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `complaint_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_district`
 --
 ALTER TABLE `tbl_district`
-  MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `district_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `tbl_feedback`
+--
+ALTER TABLE `tbl_feedback`
+  MODIFY `feedback_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_influencer`
 --
 ALTER TABLE `tbl_influencer`
-  MODIFY `influencer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `influencer_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_like`
+--
+ALTER TABLE `tbl_like`
+  MODIFY `like_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_phishingurls`
+--
+ALTER TABLE `tbl_phishingurls`
+  MODIFY `phishing_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `tbl_place`
 --
 ALTER TABLE `tbl_place`
-  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_post`
 --
 ALTER TABLE `tbl_post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_request`
---
-ALTER TABLE `tbl_request`
-  MODIFY `request_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_review`
---
-ALTER TABLE `tbl_review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_sponser`
 --
 ALTER TABLE `tbl_sponser`
-  MODIFY `sponser_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sponser_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tbl_subcategory`
+-- AUTO_INCREMENT for table `tbl_sponser_influencer_chat`
 --
-ALTER TABLE `tbl_subcategory`
-  MODIFY `subcategory_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tbl_sponser_influencer_chat`
+  MODIFY `chat_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
