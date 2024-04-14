@@ -65,12 +65,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="Feedback.jsp" >
-                            <i data-feather="alert-triangle"></i>
-                            <span>Feedback</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="../logout.jsp" >
                             <i data-feather="log-out"></i>
                             <span>Logout</span>
@@ -563,7 +557,7 @@
                             <!-- /partials/widgets/stories-widget.html -->
                             <div class="card">
                                 <div class="card-heading is-bordered">
-                                    <h4>Sponsors</h4>
+                                    <h4>Influencer</h4>
                                 </div>
                                 <div class="card-body no-padding">
                                    

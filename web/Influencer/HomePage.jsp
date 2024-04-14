@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="SessionValidator.jsp" %>
+<%--<%@include file="SessionValidator.jsp" %>--%>
 <html lang="en">
 
     <head>
@@ -43,10 +43,10 @@
 
 
                 <div class="user-block">
-                    <img class="avatar" src="<%=session.getAttribute("sphoto")%>" alt="">
+                    <img class="avatar" src="<%=session.getAttribute("iphoto")%>" alt="">
                     <div class="meta">
-                        <span style="margin-left: 7px"><%=session.getAttribute("sname")%></span>
-                        <span style="margin-left: 10px">Student</span>
+                        <span style="margin-left: 7px"><%=session.getAttribute("iname")%></span>
+                        <span style="margin-left: 10px">Influencer</span>
                     </div>
                 </div>
             </div>
@@ -58,30 +58,14 @@
                             <span>Timeline</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="Lectures.jsp" class="is-active">
-                            <i data-feather="book"></i>
-                            <span>Lecture</span>
-                        </a>
-                    </li>
-                     <li>
-                        <a href="ViewTeachers.jsp" class="is-active">
-                            <i data-feather="box"></i>
-                            <span>My Teachers</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="Complaint.jsp" >
                             <i data-feather="alert-circle"></i>
                             <span>Complaint</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="Feedback.jsp" >
-                            <i data-feather="alert-triangle"></i>
-                            <span>Feedback</span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="../logout.jsp" >
                             <i data-feather="log-out"></i>
@@ -109,44 +93,17 @@
                     </div>
                     <h1>Timeline</h1>
                     <div class="controls">
-                        <div class="navbar-item is-icon drop-trigger">
-                            <a class="icon-link" href="javascript:void(0);">
-                                <i data-feather="mail"></i>
-                                <span class="indicator"></span>
-                            </a>
 
-                            <div class="nav-drop is-right" style="width: 250px" >
-                                <div class="inner">
-                                    <div class="nav-drop-header">
-                                        <span>Messages</span>
-                                        <a href="#">Inbox</a>
-                                    </div>
-                                    <div class="nav-drop-body is-friend-requests">
-                                        <!-- Message -->
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <a href="DepartmentChat/Chat.jsp">Department Group</a>
-                                            </div>
-                                            <div class="media-right is-centered">
-                                                <div class="added-icon">
-                                                    <a href="DepartmentChat/Chat.jsp" > <i data-feather="message-square"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
                             <div class="user-image">
-                                <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                 <span class="indicator"></span>
                             </div>
 
                             <div class="nav-drop is-account-dropdown">
                                 <div class="inner">
                                     <div class="nav-drop-header">
-                                        <span class="username"><%=session.getAttribute("sname")%></span>
+                                        <span class="username"><%=session.getAttribute("iname")%></span>
                                         <label class="theme-toggle">
                                             <input type="checkbox">
                                             <span class="toggler">
@@ -164,11 +121,11 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <div class="image">
-                                                        <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                                        <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="media-content">
-                                                    <h3><%=session.getAttribute("sname")%></h3>
+                                                    <h3><%=session.getAttribute("iname")%></h3>
                                                     <small>View Profile</small>
                                                 </div>
                                                 <div class="media-right">
@@ -214,43 +171,17 @@
                     </div>
                     <h1>Timeline</h1>
                     <div class="controls">
-                        <div class="navbar-item is-icon drop-trigger">
-                            <a class="icon-link" href="javascript:void(0);">
-                                <i data-feather="mail"></i>
-                                <span class="indicator"></span>
-                            </a>
 
-                            <div class="nav-drop is-right" style="width: 250px">
-                                <div class="inner">
-                                    <div class="nav-drop-header">
-                                        <span>Messages</span>
-                                        <a href="#">Inbox</a>
-                                    </div>
-                                    <div class="nav-drop-body is-friend-requests">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <a href="DepartmentChat/Chat.jsp">Department Group</a>
-                                            </div>
-                                            <div class="media-right is-centered">
-                                                <div class="added-icon">
-                                                    <a href="DepartmentChat/Chat.jsp" > <i data-feather="message-square"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
                             <div class="user-image">
-                                <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                 <span class="indicator"></span>
                             </div>
 
                             <div class="nav-drop is-account-dropdown">
                                 <div class="inner">
                                     <div class="nav-drop-header">
-                                        <span class="username"><%=session.getAttribute("sname")%></span>
+                                        <span class="username"><%=session.getAttribute("iname")%></span>
                                         <label class="theme-toggle">
                                             <input type="checkbox">
                                             <span class="toggler">
@@ -268,11 +199,11 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <div class="image">
-                                                        <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                                        <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="media-content">
-                                                    <h3><%=session.getAttribute("sname")%></h3>
+                                                    <h3><%=session.getAttribute("iname")%></h3>
                                                     <small>View Profile</small>
                                                 </div>
                                                 <div class="media-right">
@@ -298,201 +229,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Content placeholders at page load -->
-                <!-- /html/partials/global/placeload/feed-page/feed-menu-shadow-dom.html -->
-                <!-- this holds the animated content placeholders that show up before content -->
-                <div id="shadow-dom" class="view-wrap">
-                    <div class="columns">
 
-                        <div class="column is-8">
-
-                            <!-- Placeload element -->
-                            <div class="placeload compose-placeload">
-                                <div class="header">
-                                    <div class="content-shape is-lg loads"></div>
-                                    <div class="content-shape is-lg loads"></div>
-                                    <div class="content-shape is-lg loads"></div>
-                                </div>
-                                <div class="body">
-                                    <div class="img loads"></div>
-                                    <div class="inner-wrap">
-                                        <div class="content-shape loads"></div>
-                                        <div class="content-shape loads"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Placeload element -->
-                            <div class="placeload post-placeload">
-                                <div class="header">
-                                    <div class="img loads"></div>
-                                    <div class="header-content">
-                                        <div class="content-shape loads"></div>
-                                        <div class="content-shape loads"></div>
-                                    </div>
-                                </div>
-                                <div class="image-placeholder loads"></div>
-                                <div class="placeholder-footer">
-                                    <div class="footer-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Placeload element -->
-                            <div class="placeload post-placeload">
-                                <div class="header">
-                                    <div class="img loads"></div>
-                                    <div class="header-content">
-                                        <div class="content-shape loads"></div>
-                                        <div class="content-shape loads"></div>
-                                    </div>
-                                </div>
-                                <div class="image-placeholder loads"></div>
-                                <div class="placeholder-footer">
-                                    <div class="footer-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Placeload element -->
-                            <div class="placeload post-placeload">
-                                <div class="header">
-                                    <div class="img loads"></div>
-                                    <div class="header-content">
-                                        <div class="content-shape loads"></div>
-                                        <div class="content-shape loads"></div>
-                                    </div>
-                                </div>
-                                <div class="image-placeholder loads"></div>
-                                <div class="placeholder-footer">
-                                    <div class="footer-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Placeload element -->
-                            <div class="placeload post-placeload">
-                                <div class="header">
-                                    <div class="img loads"></div>
-                                    <div class="header-content">
-                                        <div class="content-shape loads"></div>
-                                        <div class="content-shape loads"></div>
-                                    </div>
-                                </div>
-                                <div class="image-placeholder loads"></div>
-                                <div class="placeholder-footer">
-                                    <div class="footer-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="column is-4">
-
-                            <!-- Placeload element -->
-                            <div class="placeload stories-placeload">
-                                <div class="header">
-                                    <div class="content-shape loads"></div>
-                                </div>
-                                <div class="body">
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Placeload element -->
-                            <div class="placeload mini-widget-placeload">
-                                <div class="body">
-                                    <div class="inner-wrap">
-                                        <div class="img loads"></div>
-                                        <div class="content-shape loads"></div>
-                                        <div class="content-shape loads"></div>
-                                        <div class="content-shape loads"></div>
-                                        <div class="button-shape loads"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Placeload element -->
-                            <div class="placeload list-placeload">
-                                <div class="header">
-                                    <div class="content-shape loads"></div>
-                                </div>
-                                <div class="body">
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex-block">
-                                        <div class="img loads"></div>
-                                        <div class="inner-wrap">
-                                            <div class="content-shape loads"></div>
-                                            <div class="content-shape loads"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
                 <!-- Feed page main wrapper -->
                 <div id="activity-feed" class="view-wrap true-dom is-hidden">
                     <div class="columns">
@@ -527,7 +264,7 @@
                                         <!-- Compose form -->
                                         <div class="compose">
                                             <div class="compose-form">
-                                                <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                                <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                                 <div class="control">
                                                     <textarea id="publish" class="textarea" rows="3" placeholder="Write something ..."></textarea>
                                                 </div>
@@ -545,32 +282,45 @@
 
                                         <!-- Hidden Options -->
                                         <div class="hidden-options">
-                                            <div class="target-channels" required>
+                                            <div class="target-channels" >
                                                 <!-- Publication Channel -->
-                                                <div class="channel" onclick="checkOnlyOne(this.value);" value="2">
+                                                <div class="channel" onclick="checkOnlyOne(4)">
                                                     <div class="round-checkbox is-small">
                                                         <div>
-                                                            <input class="checks" type="checkbox" id="checkbox-1" name="check_sel" value="2">
+                                                            <input class="checks" type="checkbox" id="checkbox-1" onclick="checkOnlyOne(4)"  name="check_sel" value="4">
                                                             <label for="checkbox-1"></label>
                                                         </div>
                                                     </div>
                                                     <div class="channel-icon">
                                                         <i data-feather="bell"></i>
                                                     </div>
-                                                    <div class="channel-name">College Members</div>
+                                                    <div class="channel-name"> All</div>
                                                 </div>
-                                                <div class="channel" onclick="checkOnlyOne(this.value);" value="5">
+                                                <div class="channel" onclick="checkOnlyOne(5)">
                                                     <div class="round-checkbox is-small">
                                                         <div>
-                                                            <input class="checks" type="checkbox" id="checkbox-1" name="check_sel" value="5">
+                                                            <input class="checks" type="checkbox" id="checkbox-1" onclick="checkOnlyOne(5)" name="check_sel" value="5">
                                                             <label for="checkbox-1"></label>
                                                         </div>
                                                     </div>
                                                     <div class="channel-icon">
                                                         <i data-feather="bell"></i>
                                                     </div>
-                                                    <div class="channel-name">Only For Department Members</div>
+                                                    <div class="channel-name">Only For  Sponsors</div>
                                                 </div>
+                                                <div class="channel" onclick="checkOnlyOne(6)" >
+                                                    <div class="round-checkbox is-small">
+                                                        <div>
+                                                            <input class="checks" type="checkbox" id="checkbox-1" onclick="checkOnlyOne(6)" name="check_sel" value="6">
+                                                            <label for="checkbox-1"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="channel-icon">
+                                                        <i data-feather="bell"></i>
+                                                    </div>
+                                                    <div class="channel-name">Only For Influencer</div>
+                                                </div>
+                                              
                                             </div>
                                         </div>
                                         <!-- General basic options -->
@@ -579,7 +329,7 @@
                                             <div class="compose-option">
                                                 <i data-feather="camera"></i>
                                                 <span>Media</span>
-                                                <input id="feed-upload-input-2" type="file" type="file" accept=".png, .jpg, .jpeg" onchange="readURL(this)">
+                                                <input id="feed-upload-input-2" type="file" type="file"  onchange="readURL(this)">
                                             </div>
 
                                         </div>
@@ -618,94 +368,29 @@
                             <!-- /partials/widgets/stories-widget.html -->
                             <div class="card">
                                 <div class="card-heading is-bordered">
-                                    <h4>Teachers</h4>
-                                    <!--                                    <div class="dropdown is-spaced is-neutral is-right dropdown-trigger">
-                                                                            <div>
-                                                                                <div class="button">
-                                                                                    <a href="StaffList.jsp" >  <i data-feather="more-vertical"></i></a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>-->
+                                    <h4>Sponsors</h4>
+                                   
                                 </div>
                                 <div class="card-body no-padding">
-                                    <!-- Story block -->
-                                    <!--                                    <div class="story-block">
-                                                                            <a href="NewStaff.jsp" class="add-story">
-                                                                                <i data-feather="plus"></i>
-                                                                            </a>
-                                                                            <div class="story-meta">
-                                                                                <span>Add a new Staff</span>
-                                                                                <span>Share Duty's with them</span>
-                                                                            </div>
-                                                                        </div>-->
-                                    <!-- Story block -->
+                                   
                                     <%
-                                        String selQry = "select * from tbl_teacher where department_id='" + session.getAttribute("sdid") + "'";
+                                        String selQry = "select * from tbl_sponser";
                                         ResultSet rs = con.selectCommand(selQry);
                                         while (rs.next()) {
                                     %>
 
-                                    <div class="story-block">
+                                    <div class="story-block" onclick="window.location='SponsorChat/Chat.jsp?id=<%=rs.getString("sponser_id")%>'">
                                         <div class="img-wrapper">
-                                            <img src="<%=rs.getString("teacher_photo")%>" data-user-popover="1" alt="">
+                                            <img src="<%=rs.getString("sponser_photo")%>" data-user-popover="1" alt="">
                                         </div>
                                         <div class="story-meta">
-                                            <span><%=rs.getString("teacher_name")%></span>
-                                            <span><%=rs.getString("teacher_contact")%></span>
+                                            <span><%=rs.getString("sponser_name")%></span>
+                                            <span><%=rs.getString("sponser_contact")%></span>
                                         </div>
                                     </div>
 
 
                                     <%
-                                        }
-
-
-                                    %>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-heading is-bordered">
-                                    <h4>Students</h4>
-                                    <!--                                    <div class="dropdown is-spaced is-neutral is-right dropdown-trigger">
-                                                                            <div>
-                                                                                <div class="button">
-                                                                                    <a href="StudentList.jsp" >  <i data-feather="more-vertical"></i></a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>-->
-                                </div>
-                                <div class="card-body no-padding">
-                                    <!-- Story block -->
-                                    <!--                                    <div class="story-block">
-                                                                            <a href="NewStudent.jsp" class="add-story">
-                                                                                <i data-feather="plus"></i>
-                                                                            </a>
-                                                                            <div class="story-meta">
-                                                                                <span>Add a new Student</span>
-                                                                                <span>Build Strength</span>
-                                                                            </div>
-                                                                        </div>-->
-                                    <!-- Story block -->
-                                    <%                                        String selQry1 = "select * from tbl_influencer s inner join tbl_course c on c.course_id = s.course_id where department_id='" + session.getAttribute("sdid") + "'";
-                                        System.out.println(selQry1);
-                                    ResultSet rs1 = con.selectCommand(selQry1);
-                                        
-                                        while (rs1.next()) {
-                                    %>
-
-                                    <div class="story-block">
-                                        <div class="img-wrapper">
-                                            <img src="<%=rs1.getString("influencer_photo")%>" data-user-popover="1" alt="">
-                                        </div>
-                                        <div class="story-meta">
-                                            <span><%=rs1.getString("influencer_name")%></span>
-                                            <span><%=rs1.getString("course_name")%></span>
-                                        </div>
-                                    </div>
-
-
-                                    <%
-
                                         }
 
 
@@ -768,7 +453,7 @@
 
                                             $.ajax({
                                                 type: 'POST',
-                                                url: '../Assets/AjaxPages/AjaxStudentPost.jsp',
+                                                url: '../Assets/AjaxPages/AjaxInfluencerPost.jsp',
                                                 data: {content: content,
                                                     type: type,
                                                     file: ""
@@ -789,7 +474,7 @@
 
                                             $.ajax({
                                                 type: 'POST',
-                                                url: '../Assets/AjaxPages/AjaxStudentPost.jsp',
+                                                url: '../Assets/AjaxPages/AjaxInfluencerPost.jsp',
                                                 data: {content: content,
                                                     type: type,
                                                     file: text
@@ -806,16 +491,16 @@
                                     }
                                     function loadPage()
                                     {
-                                        $("#post-load").load('../Assets/AjaxPages/AjaxStudentPostLoad.jsp');
+                                        $("#post-load").load('../Assets/AjaxPages/AjaxInfluencerPostLoad.jsp');
                                     }
 
-                                      function fclick(id)
+                                    function fclick(id)
                                     {
-                                        var div = document.querySelector('#cid-'+id);
+                                        var div = document.querySelector('#cid-' + id);
                                         div.classList.toggle('is-hidden');
 
                                     }
-                                   function onLike(img)
+                                    function onLike(img)
                                     {
                                         var string = img.src;
                                         var name = string.substring(string.length - 11);
@@ -825,7 +510,7 @@
 
                                             $.ajax({
                                                 type: 'POST',
-                                                url: '../Assets/AjaxPages/AjaxStudentLike.jsp',
+                                                url: '../Assets/AjaxPages/AjaxInfluencerLike.jsp',
                                                 data: {id: id},
                                                 success: function(result) {
                                                     loadPage();
@@ -854,7 +539,7 @@
                                         var content = document.getElementById("content-" + id).value;
                                         $.ajax({
                                             type: 'POST',
-                                            url: '../Assets/AjaxPages/AjaxStudentComment.jsp',
+                                            url: '../Assets/AjaxPages/AjaxInfluencerComment.jsp',
                                             data: {id: id,
                                                 content: content},
                                             success: function(result) {

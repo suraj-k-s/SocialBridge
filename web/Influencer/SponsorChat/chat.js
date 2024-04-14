@@ -114,6 +114,7 @@ function sendChat() {
     }
     else
     {
+        alert('hi')
         $.ajax({
             url: "AjaxChat.jsp",
             type: "POST",

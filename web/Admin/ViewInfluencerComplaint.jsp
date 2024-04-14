@@ -15,7 +15,7 @@
             String upQry = "update tbl_complaint set complaint_reply='" + request.getParameter("txt_reply") + "', complaint_reply_date=curdate(),complaint_status='1' where complaint_id='" + request.getParameter("hid") + "'";
             System.out.println(upQry);
             con.executeCommand(upQry);
-            response.sendRedirect("ViewStudentComplaint.jsp");
+            response.sendRedirect("ViewInfluencerComplaint.jsp");
         }
 
 
@@ -69,13 +69,13 @@
                                                 <td align="center" scope="col">Sl.No</td>
                                                 <td align="center" scope="col">Complaint</td>
                                                 <td align="center" scope="col">Date</td>
-                                                <td align="center" scope="col">Student</td>
+                                                <td align="center" scope="col">influencer</td>
                                                 <td align="center" scope="col">Action</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <%                                                int i = 0;
-                                                String selQry = "select * from tbl_complaint c inner join tbl_student co on co.student_id=c.student_id where complaint_status='0'";
+                                                String selQry = "select * from tbl_complaint c inner join tbl_influencer co on co.influencer_id=c.influencer_id where complaint_status='0'";
                                                 ResultSet rs = con.selectCommand(selQry);
                                                 while (rs.next()) {
 
@@ -86,8 +86,8 @@
                                                 <td align="center"><%=i%></td>
                                                 <td align="center"><%=rs.getString("complaint_content")%></td>
                                                 <td align="center"><%=rs.getString("complaint_date")%></td>
-                                                <td align="center"><%=rs.getString("student_name")%></td>
-                                                <td align="center"><a href="ViewStudentComplaint.jsp?up=<%=rs.getString("complaint_id")%>" class="status_btn">Reply</a> </td>
+                                                <td align="center"><%=rs.getString("influencer_name")%></td>
+                                                <td align="center"><a href="ViewInfluencerComplaint.jsp?up=<%=rs.getString("complaint_id")%>" class="status_btn">Reply</a> </td>
                                             </tr>
                                             <%                      }
 
@@ -106,14 +106,14 @@
                                                 <td align="center" scope="col">Sl.No</td>
                                                 <td align="center" scope="col">Complaint</td>
                                                 <td align="center" scope="col">Date</td>
-                                                <td align="center" scope="col">College</td>
+                                                <td align="center" scope="col">influencer</td>
                                                 <td align="center" scope="col">Reply</td>
                                                 <td align="center" scope="col">Reply Date</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <%                                                int j = 0;
-                                                String selQry1 = "select * from tbl_complaint c inner join tbl_student co on co.student_id=c.student_id where complaint_status='1'";
+                                                String selQry1 = "select * from tbl_complaint c inner join tbl_influencer co on co.influencer_id=c.influencer_id where complaint_status='1'";
                                                 ResultSet rs1 = con.selectCommand(selQry1);
                                                 while (rs1.next()) {
 
@@ -124,7 +124,7 @@
                                                 <td align="center"><%=j%></td>
                                                 <td align="center"><%=rs1.getString("complaint_content")%></td>
                                                 <td align="center"><%=rs1.getString("complaint_date")%></td>
-                                                <td align="center"><%=rs1.getString("student_name")%></td>
+                                                <td align="center"><%=rs1.getString("influencer_name")%></td>
                                                 <td align="center"><%=rs1.getString("complaint_reply")%></td>
                                                 <td align="center"><%=rs1.getString("complaint_reply_date")%></td>
                                             </tr>

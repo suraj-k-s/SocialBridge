@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Teacher List</title>
+        <title>sponser List</title>
         <%@include file="SessionValidator.jsp" %>
         <%@include file="Header.jsp" %>
     </head>
@@ -23,7 +23,7 @@
                         <div class="col-12">
                             <div class="QA_section">
                                 <div class="QA_table mb_30">
-                                    <iframe style="border: none; border-radius: 15px; width: 100%; height: 653px ;" src = "Teacher.jsp" ></iframe>
+                                    <iframe style="border: none; border-radius: 15px; width: 100%; height: 653px ;" src = "sponser.jsp" ></iframe>
                                 </div>
                             </div>
                         </div>

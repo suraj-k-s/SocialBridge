@@ -25,7 +25,7 @@
                     + "influencer_photo='"+request.getParameter("txt_pic")+"',"
                     + "influencer_email='"+request.getParameter("txt_email")+"',"
                     + "influencer_address='"+request.getParameter("txt_address")+"'"
-                    + "where influencer_id='"+session.getAttribute("sid")+"'";
+                    + "where influencer_id='"+session.getAttribute("iid")+"'";
             con.executeCommand(upQry);
             response.sendRedirect("ViewProfile.jsp");
             
@@ -39,7 +39,7 @@
         <form method="post">
         <table border="1">
             <%
-                String selQry = "select * from tbl_influencer where influencer_id='"+session.getAttribute("sid")+"'";
+                String selQry = "select * from tbl_influencer where influencer_id='"+session.getAttribute("iid")+"'";
                 ResultSet rs = con.selectCommand(selQry);
                 if(rs.next())
                 {

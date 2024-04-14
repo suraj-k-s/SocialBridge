@@ -17,7 +17,7 @@
     <%        if (request.getParameter("btn_send") != null) {
 
             String insQry = "insert into tbl_complaint(complaint_content,complaint_date,influencer_id)"
-                    + "values('" + request.getParameter("content") + "',curdate(),'" + session.getAttribute("sid") + "')";
+                    + "values('" + request.getParameter("content") + "',curdate(),'" + session.getAttribute("iid") + "')";
             if(con.executeCommand(insQry))
             {
                 %> 
@@ -51,13 +51,13 @@
 <%
 
     String a = "0",b="0";
-    String one ="select count(complaint_status) as one from tbl_complaint where influencer_id='" + session.getAttribute("sid") + "' and complaint_status='0'";
+    String one ="select count(complaint_status) as one from tbl_complaint where influencer_id='" + session.getAttribute("iid") + "' and complaint_status='0'";
     ResultSet ro = con.selectCommand(one);
     if(ro.next())
     {
         a = ro.getString("one");
     }
-    String two ="select count(complaint_status) as two from tbl_complaint where influencer_id='" + session.getAttribute("sid") + "' and complaint_status='1'";
+    String two ="select count(complaint_status) as two from tbl_complaint where influencer_id='" + session.getAttribute("iid") + "' and complaint_status='1'";
     ResultSet rt = con.selectCommand(two);
     if(rt.next())
     {
@@ -81,7 +81,7 @@ if(!a.equals("0"))
                     <th>Reply</th>
 
                 </tr>
-                <%           String selQry = "select * from tbl_complaint where influencer_id='" + session.getAttribute("sid") + "' and complaint_status='0'";
+                <%           String selQry = "select * from tbl_complaint where influencer_id='" + session.getAttribute("iid") + "' and complaint_status='0'";
                     int i = 0;
                     ResultSet rs = con.selectCommand(selQry);
                     while (rs.next()) {
@@ -119,7 +119,7 @@ if(!a.equals("0"))
 
                 </tr>
 
-            <%                    String selQry1 = "select * from tbl_complaint where influencer_id='" + session.getAttribute("sid") + "' and complaint_status='1'";
+            <%                    String selQry1 = "select * from tbl_complaint where influencer_id='" + session.getAttribute("iid") + "' and complaint_status='1'";
 
                 ResultSet rs1 = con.selectCommand(selQry1);
                 while (rs1.next()) {

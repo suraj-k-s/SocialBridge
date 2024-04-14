@@ -71,6 +71,17 @@
                         <li><a href="Place.jsp">Place</a></li>
                     </ul>
                 </li>
+                
+                <li class="">
+                    <a   class="has-arrow" href="#" aria-expanded="false">
+                        <img src="../Assets/admin/img/menu-icon/2.svg" alt="">
+                        <span>Verification</span>
+                    </a>
+                    <ul>
+                        <li><a href="influencerList.jsp">Influencer</a></li>
+                        <li><a href="sponserList.jsp">Sponsor</a>/</li>
+                    </ul>
+                </li>
                  
                  <li class="side_menu_title">
                     <span>Others</span>
@@ -82,13 +93,13 @@
                     </a>
                 </li>
                 <li class="">
-                    <a   class="has-arrow" href="#" aria-expanded="false">
+                    <a class="has-arrow" href="#" aria-expanded="false">
                         <img src="../Assets/admin/img/menu-icon/2.svg" alt="">
                         <span>Complaints</span>
                     </a>
                     <ul>
                         <li><a href="ViewInfluencerComplaint.jsp">Influencer Complaint</a></li>
-                        <li><a href="ViewSponsorFeedback.jsp">Sponsor Complaint</a></li>
+                        <li><a href="ViewSponsorComplaint.jsp">Sponsor Complaint</a></li>
                     </ul>
                 </li>
                 <li class="">

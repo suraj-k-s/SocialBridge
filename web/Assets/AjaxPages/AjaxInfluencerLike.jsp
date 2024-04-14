@@ -6,7 +6,7 @@
     ResultSet rs = con.selectCommand(selQry);
     if(!rs.next())
     {
-        String insQry = "insert into tbl_like(post_id,influencer_photo,influencer_id,influencer_nameinfluencer_id,influencer_name,influencer_photo)"
+        String insQry = "insert into tbl_like(post_id,influencer_id,influencer_name,influencer_photo,sponser_id,sponser_name,sponser_photo)"
             + "values('" + Id + "','" + session.getAttribute("iid") + "','" + session.getAttribute("iname") + "','" + session.getAttribute("iphoto") + "','0','0','0')";
 
     if (con.executeCommand(insQry)) {

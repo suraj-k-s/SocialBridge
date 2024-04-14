@@ -27,7 +27,7 @@
         </head>
     <%
         response.setHeader("Cache-Control", "no-cache, no-store");
-        if (session.getAttribute("sid") == null) {
+        if (session.getAttribute("iid") == null) {
             response.sendRedirect("../../");
         }
     %>
@@ -41,7 +41,7 @@
             <div class="chat-inner">
 
                 <%
-                    String selQr = "select * from tbl_influencer where influencer_id='" + request.getParameter("id") + "'";
+                    String selQr = "select * from tbl_sponser where sponser_id='" + request.getParameter("id") + "'";
                     ResultSet rs = con.selectCommand(selQr);
                     rs.next();
 
@@ -53,10 +53,10 @@
                     <div class="nav-start">
                         <div class="recipient-block">
                             <div class="avatar-container">
-                                <img class="user-avatar" style="width: 42px; height:42px " src="<%=rs.getString("influencer_photo")%>" alt="">
+                                <img class="user-avatar" style="width: 42px; height:42px " src="<%=rs.getString("sponser_photo")%>" alt="">
                             </div>
                             <div class="username">
-                                <span><%=rs.getString("influencer_name")%></span>
+                                <span><%=rs.getString("sponser_name")%></span>
                             </div>
                         </div>
                     </div>

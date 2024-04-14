@@ -1,6 +1,6 @@
 <%
         response.setHeader("Cache-Control", "no-cache, no-store");
-        if(session.getAttribute("sid") == null)
+        if(session.getAttribute("iid") == null)
         {
             response.sendRedirect("../");
         }

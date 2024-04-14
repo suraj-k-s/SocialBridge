@@ -63,12 +63,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="Feedback.jsp" >
-                            <i data-feather="alert-triangle"></i>
-                            <span>Feedback</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="../logout.jsp" >
                             <i data-feather="log-out"></i>
                             <span>Logout</span>

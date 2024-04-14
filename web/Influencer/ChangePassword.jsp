@@ -19,7 +19,7 @@
 
             String db_password = "", current_password = "", new_password = "", re_password = "";
 
-            String selQry = "select * from tbl_influencer where influencer_id='" + session.getAttribute("sid") + "'";
+            String selQry = "select * from tbl_influencer where influencer_id='" + session.getAttribute("iid") + "'";
             ResultSet rs = con.selectCommand(selQry);
             if (rs.next()) {
                 db_password = rs.getString("influencer_password");
@@ -33,7 +33,7 @@
                 if (new_password.equals(re_password)) {
                     String upQry = "update tbl_influencer set "
                             + "influencer_password='" + new_password + "' "
-                            + "where influencer_id='" + session.getAttribute("sid") + "'";
+                            + "where influencer_id='" + session.getAttribute("iid") + "'";
                     if (con.executeCommand(upQry)) {
     %> 
     <script type="text/javascript">

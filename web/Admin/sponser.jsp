@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Teacher
+    Document   : sponser
     Created on : May 12, 2021, 10:58:27 PM
     Author     : Pro-TECH
 --%>
@@ -10,7 +10,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Teacher List</title>
+        <title>sponser List</title>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
         <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
         <link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
@@ -23,13 +23,11 @@
         <%@include file="SessionValidator.jsp" %>
     </head>
     <body>
-        <h1 align="center" id="heading">Teachers Data</h1>
+        <h1 align="center" id="heading">sponser Data</h1>
         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>Sl.no</th>
-                    <th>College</th>
-                    <th>Department</th>
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Email</th>
@@ -39,7 +37,7 @@
             </thead>
             <tbody>
                 <%                   int i = 0;
-                    String selQry = "select * from tbl_teacher t inner join tbl_department d on d.department_id=t.department_id inner join tbl_college c on c.college_id=d.college_id inner join tbl_place p on p.place_id=t.place_id inner join tbl_district dis on dis.district_id=p.district_id";
+                    String selQry = "select * from tbl_sponser t inner join tbl_place p on p.place_id=t.place_id inner join tbl_district dis on dis.district_id=p.district_id";
                     ResultSet rs = con.selectCommand(selQry);
 
                     while (rs.next()) {
@@ -47,11 +45,9 @@
                 %>
                 <tr>
                     <td><%=i%></td>
-                    <td><%=rs.getString("college_name")%></td>
-                    <td><%=rs.getString("department_name")%></td>
-                    <td><%=rs.getString("teacher_name")%></td>
-                    <td><%=rs.getString("teacher_contact")%></td>
-                    <td><%=rs.getString("teacher_email")%></td>
+                    <td><%=rs.getString("sponser_name")%></td>
+                    <td><%=rs.getString("sponser_contact")%></td>
+                    <td><%=rs.getString("sponser_email")%></td>
                     <td><%=rs.getString("district_name")%></td>
                     <td><%=rs.getString("place_name")%></td>
                 </tr>

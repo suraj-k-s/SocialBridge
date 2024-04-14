@@ -20,7 +20,7 @@
         <h1>Profile</h1>
         <table border="1">
             <%
-                String selQry = "select * from tbl_influencer where influencer_id='"+session.getAttribute("sid")+"'";
+                String selQry = "select * from tbl_influencer where influencer_id='"+session.getAttribute("iid")+"'";
                 ResultSet rs = con.selectCommand(selQry);
                 if(rs.next())
                 {

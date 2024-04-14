@@ -40,10 +40,10 @@
 
 
                 <div class="user-block">
-                    <img class="avatar" src="<%=session.getAttribute("sphoto")%>" alt="">
+                    <img class="avatar" src="<%=session.getAttribute("iphoto")%>" alt="">
                     <div class="meta">
-                        <span style="margin-left: 7px"><%=session.getAttribute("sname")%></span>
-                        <span style="margin-left: 10px">Student</span>
+                        <span style="margin-left: 7px"><%=session.getAttribute("iname")%></span>
+                        <span style="margin-left: 10px">Influencer</span>
                     </div>
                 </div>
             </div>
@@ -55,28 +55,11 @@
                             <span>Timeline</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="Lectures.jsp" class="is-active">
-                            <i data-feather="book"></i>
-                            <span>Lecture</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ViewTeachers.jsp" >
-                            <i data-feather="box"></i>
-                            <span>My Teachers</span>
-                        </a>
-                    </li>
+                   
                     <li>
                         <a href="Complaint.jsp" >
                             <i data-feather="alert-circle"></i>
                             <span>Complaint</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Feedback.jsp" >
-                            <i data-feather="alert-triangle"></i>
-                            <span>Feedback</span>
                         </a>
                     </li>
                     <li>
@@ -105,44 +88,17 @@
                         </span>
                     </div>
                     <div class="controls">
-                        <div class="navbar-item is-icon drop-trigger">
-                            <a class="icon-link" href="javascript:void(0);">
-                                <i data-feather="mail"></i>
-                                <span class="indicator"></span>
-                            </a>
-
-                            <div class="nav-drop is-right" style="width: 250px">
-                                <div class="inner">
-                                    <div class="nav-drop-header">
-                                        <span>Messages</span>
-                                        <a href="#">Inbox</a>
-                                    </div>
-                                    <div class="nav-drop-body is-friend-requests">
-                                        <!-- Message -->
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <a href="DepartmentChat/Chat.jsp">Department Group</a>
-                                            </div>
-                                            <div class="media-right is-centered">
-                                                <div class="added-icon">
-                                                    <a href="DepartmentChat/Chat.jsp" > <i data-feather="message-square"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      
                         <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
                             <div class="user-image">
-                                <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                 <span class="indicator"></span>
                             </div>
 
                             <div class="nav-drop is-account-dropdown">
                                 <div class="inner">
                                     <div class="nav-drop-header">
-                                        <span class="username"><%=session.getAttribute("sname")%></span>
+                                        <span class="username"><%=session.getAttribute("iname")%></span>
                                         <label class="theme-toggle">
                                             <input type="checkbox">
                                             <span class="toggler">
@@ -160,11 +116,11 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <div class="image">
-                                                        <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                                        <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="media-content">
-                                                    <h3><%=session.getAttribute("sname")%></h3>
+                                                    <h3><%=session.getAttribute("iname")%></h3>
                                                     <small>View Profile</small>
                                                 </div>
                                                 <div class="media-right">
@@ -209,43 +165,17 @@
                         </span>
                     </div>
                     <div class="controls">
-                        <div class="navbar-item is-icon drop-trigger">
-                            <a class="icon-link" href="javascript:void(0);">
-                                <i data-feather="mail"></i>
-                                <span class="indicator"></span>
-                            </a>
-
-                            <div class="nav-drop is-right" style="width: 250px">
-                                <div class="inner">
-                                    <div class="nav-drop-header">
-                                        <span>Messages</span>
-                                        <a href="#">Inbox</a>
-                                    </div>
-                                    <div class="nav-drop-body is-friend-requests">
-                                        <div class="media">
-                                            <div class="media-content">
-                                                <a href="DepartmentChat/Chat.jsp">Department Group</a>
-                                            </div>
-                                            <div class="media-right is-centered">
-                                                <div class="added-icon">
-                                                    <a href="DepartmentChat/Chat.jsp" > <i data-feather="message-square"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
                             <div class="user-image">
-                                <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                 <span class="indicator"></span>
                             </div>
 
                             <div class="nav-drop is-account-dropdown">
                                 <div class="inner">
                                     <div class="nav-drop-header">
-                                        <span class="username"><%=session.getAttribute("sname")%></span>
+                                        <span class="username"><%=session.getAttribute("iname")%></span>
                                         <label class="theme-toggle">
                                             <input type="checkbox">
                                             <span class="toggler">
@@ -263,11 +193,11 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <div class="image">
-                                                        <img src="<%=session.getAttribute("sphoto")%>" alt="">
+                                                        <img src="<%=session.getAttribute("iphoto")%>" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="media-content">
-                                                    <h3><%=session.getAttribute("sname")%></h3>
+                                                    <h3><%=session.getAttribute("iname")%></h3>
                                                     <small>View Profile</small>
                                                 </div>
                                                 <div class="media-right">
