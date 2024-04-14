@@ -41,7 +41,7 @@
             <div class="chat-inner">
 
                 <%
-                    String selQr = "select * from tbl_teacher where teacher_id='" + request.getParameter("id") + "'";
+                    String selQr = "select * from tbl_influencer where influencer_id='" + request.getParameter("id") + "'";
                     ResultSet rs = con.selectCommand(selQr);
                     rs.next();
 
@@ -53,10 +53,10 @@
                     <div class="nav-start">
                         <div class="recipient-block">
                             <div class="avatar-container">
-                                <img class="user-avatar" style="width: 42px; height:42px " src="<%=rs.getString("teacher_photo")%>" alt="">
+                                <img class="user-avatar" style="width: 42px; height:42px " src="<%=rs.getString("influencer_photo")%>" alt="">
                             </div>
                             <div class="username">
-                                <span><%=rs.getString("teacher_name")%></span>
+                                <span><%=rs.getString("influencer_name")%></span>
                             </div>
                         </div>
                     </div>
@@ -100,23 +100,23 @@
             </div>
         </div>
         <script src="../../Assets/JQuery/jQuery.js"></script>
-          <script>
-                                    function deleteChat(id)
-                                    {
-                                        var text = "Press a button!\nEither OK or Cancel.";
-                                        if (confirm(text) == true) {
-                                            $.ajax({
-                                                url: "AjaxDelete.jsp",
-                                                type: "POST",
-                                                data: {sid: id},
-                                                success: function(result) {
-
-                                                }
-                                            });
-                                        } else {
-                                            text = "You canceled!";
-                                        }
-                                    }
+        <script>
+                                   function deleteChat(id)
+                                   {
+                                       var text = "Press a button!\nEither OK or Cancel.";
+                                       if (confirm(text) == true) {
+                                           $.ajax({
+                                               url: "AjaxDelete.jsp",
+                                               type: "POST",
+                                               data: {sid: id},
+                                               success: function(result) {
+                                                   reloadSection();
+                                               }
+                                           });
+                                       } else {
+                                           text = "You canceled!";
+                                       }
+                                   }
 
         </script>
         <script src="chat.js"></script>
